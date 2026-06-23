@@ -138,25 +138,6 @@ data/figuras_caos/        # figuras, gifs, csv, etc.
 
 Esos archivos están en `.gitignore`, porque no tiene sentido subir cada prueba al repositorio.
 
-## Nombre sugerido del repositorio
-
-Mi recomendación:
-
-```text
-chaos-calculator-8bit
-```
-
-Alternativas:
-
-```text
-crt-chaos-calculator
-retro-chaos-lab
-chaoscalc-8bit
-classical-chaos-calculator
-```
-
-Yo usaría `chaos-calculator-8bit`: es claro, corto, buscable y captura la idea del proyecto sin sonar demasiado solemne.
-
 ## Estado
 
 Proyecto experimental, pero usable. La idea es ir ampliándolo como herramienta para analizar caos clásico en reducciones de modelos físicos, sistemas Hamiltonianos y ODEs no lineales arbitrarias.
