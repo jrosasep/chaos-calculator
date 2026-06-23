@@ -1,4 +1,4 @@
-# Chaos Calculator 8-bit
+# Chaos Calculator Bullshit
 
 <p align="center">
   <img src="media/chaos_logo_crt.png" alt="Chaos Calculator CRT logo" width="900">
@@ -7,7 +7,7 @@
 
 Analizador de caos clásico con estética CRT retro/8-bit. Es una calculadora de sistemas dinámicos: le das un Hamiltoniano o un sistema de ecuaciones diferenciales ordinarias, integras, miras trayectorias, secciones, Lyapunov, SALI, animaciones 3D y figuras exportables.
 
-No pretende ser un reemplazo de un paper ni de Mathematica. Es más bien una herramienta de exploración: rápida para probar ideas, suficientemente seria para producir figuras iniciales, y con una interfaz ridículamente verde porque sí.
+Proyecto experimental con IA para probar ideas de automatización de analisis de caos clasico, con una interfaz ridículamente verde porque mola.
 
 ## Qué hace
 
@@ -143,25 +143,6 @@ data/figuras_caos/        # figuras, gifs, csv, etc.
 ```
 
 Esos archivos están en `.gitignore`, porque no tiene sentido subir cada prueba al repositorio.
-
-## Nombre sugerido del repositorio
-
-Mi recomendación:
-
-```text
-chaos-calculator-8bit
-```
-
-Alternativas:
-
-```text
-crt-chaos-calculator
-retro-chaos-lab
-chaoscalc-8bit
-classical-chaos-calculator
-```
-
-Yo usaría `chaos-calculator-8bit`: es claro, corto, buscable y captura la idea del proyecto sin sonar demasiado solemne.
 
 ## Estado
 
