@@ -1,5 +1,10 @@
 # Chaos Calculator 8-bit
 
+<p align="center">
+  <img src="media/chaos_logo_crt.png" alt="Chaos Calculator CRT logo" width="900">
+</p>
+
+
 Analizador de caos clásico con estética CRT retro/8-bit. Es una calculadora de sistemas dinámicos: le das un Hamiltoniano o un sistema de ecuaciones diferenciales ordinarias, integras, miras trayectorias, secciones, Lyapunov, SALI, animaciones 3D y figuras exportables.
 
 No pretende ser un reemplazo de un paper ni de Mathematica. Es más bien una herramienta de exploración: rápida para probar ideas, suficientemente seria para producir figuras iniciales, y con una interfaz ridículamente verde porque sí.
@@ -36,6 +41,7 @@ ChaosCalculator/
 ├── engine/
 │   └── chaos_runtime.py             # motor + interfaz CRT
 ├── media/
+│   ├── chaos_logo_crt.png
 │   ├── I_Feel_Love.sid
 │   ├── Ashes_to_Ashes.sid
 │   └── sidplayfp.exe
