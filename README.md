@@ -2,7 +2,7 @@
 
 Analizador de caos clásico con estética CRT retro/8-bit. Es una calculadora de sistemas dinámicos: le das un Hamiltoniano o un sistema de ecuaciones diferenciales ordinarias, integras, miras trayectorias, secciones, Lyapunov, SALI, animaciones 3D y figuras exportables.
 
-No pretende ser un reemplazo de un paper ni de Mathematica. Es más bien una herramienta de exploración: rápida para probar ideas, suficientemente seria para producir figuras iniciales, y con una interfaz ridículamente verde porque sí.
+Proyecto experimental con IA para probar ideas de automatización de analisis de caos clasico, con una interfaz ridículamente verde porque mola.
 
 ## Qué hace
 
