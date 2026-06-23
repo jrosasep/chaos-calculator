@@ -1,4 +1,4 @@
-# Chaos Calculator
+# Chaos Calculator Bullshit
 
 Analizador de caos clásico con estética CRT retro/8-bit. Es una calculadora de sistemas dinámicos: le das un Hamiltoniano o un sistema de ecuaciones diferenciales ordinarias, integras, miras trayectorias, secciones, Lyapunov, SALI, animaciones 3D y figuras exportables.
 
