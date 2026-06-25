@@ -212,19 +212,3 @@ data/config.json          # memoria del programa
 data/logs/                # logs mínimos
 data/figuras_caos/        # figuras, gifs, csv, etc.
 ```
-
----
-
-## Social preview
-
-Para configurar la imagen social del repositorio en GitHub, usa:
-
-```text
-media/readme_assets/social_preview.png
-```
-
----
-
-## Nota honesta
-
-Esto es experimental. Sirve para explorar, visualizar y orientarse. No reemplaza una validación numérica seria ni una revisión matemática completa. Si una figura se ve demasiado bonita, todavía hay que preguntarse si el paso temporal, la tolerancia, el tiempo de integración y la condición inicial tienen sentido.
