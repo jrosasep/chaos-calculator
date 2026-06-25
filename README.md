@@ -1,20 +1,8 @@
 <p align="center">
-  <img src="media/readme_assets/terminal_preview.png" alt="Chaos Calculator terminal preview" width="900">
+  <img src="media/readme_assets/terminal_preview.png">
 </p>
-
-<p align="center">
-  <b>Analizador retro de caos clásico · Hamiltonianos + ODEs generales · CRT-80 · SID soundtrack</b>
-</p>
-
-<p align="center">
-  <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="matplotlib" src="https://img.shields.io/badge/plots-matplotlib-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="scipy" src="https://img.shields.io/badge/solver-scipy%20DOP853-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="status" src="https://img.shields.io/badge/status-experimental-39ff14?style=for-the-badge&labelColor=050505">
-</p>
-
----
-
+=======
+>>>>>>> 9ee774f9af36fda0de03149b7671264127f54e31
 ## Qué es esto
 
 **Chaos Calculator** es una calculadora experimental de caos clásico con estética de terminal CRT vieja, sacada de Pinterest; véase https://cl.pinterest.com/pin/689543392987246924/. Sirve para cargar sistemas dinámicos, integrarlos, visualizar trayectorias, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras sin escribir todo desde cero. Fue generado mediante iteraciones de prompts en Claude Pro y ChatGPT Plus como laboratorio personal para sistemas no lineales.
