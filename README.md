@@ -2,11 +2,22 @@
   <img src="media/readme_assets/terminal_preview.png" alt="Chaos Calculator terminal preview" width="900">
 </p>
 
+<p align="center">
+  <b>Analizador retro de caos clásico · Hamiltonianos + ODEs generales · CRT-80 · SID soundtrack</b>
+</p>
+
+<p align="center">
+  <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-39ff14?style=for-the-badge&labelColor=050505">
+  <img alt="matplotlib" src="https://img.shields.io/badge/plots-matplotlib-39ff14?style=for-the-badge&labelColor=050505">
+  <img alt="scipy" src="https://img.shields.io/badge/solver-scipy%20DOP853-39ff14?style=for-the-badge&labelColor=050505">
+  <img alt="status" src="https://img.shields.io/badge/status-experimental-39ff14?style=for-the-badge&labelColor=050505">
+</p>
+
 ---
 
 ## Qué es esto
 
-**Chaos Calculator** es una calculadora de caos clásico con estética de terminal CRT vieja, sacada de Pinterest; véase https://cl.pinterest.com/pin/689543392987246924/. La idea es cargar un sistema dinámico, integrarlo, visualizar trayectorias, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras sin tener que programarlo todo desde cero. Es un laboratorio personal para sistemas no lineales, generado mediante iteraciones de prompts en Claude Pro y ChatGPT Plus, cuyo objetivo es construir un motor experimental para analizar caos clásico en sistemas descritos por ecuaciones diferenciales y/o Hamiltonianos.
+**Chaos Calculator** es una calculadora experimental de caos clásico con estética de terminal CRT vieja, sacada de Pinterest; véase https://cl.pinterest.com/pin/689543392987246924/. Sirve para cargar sistemas dinámicos, integrarlos, visualizar trayectorias, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras sin escribir todo desde cero. Fue generado mediante iteraciones de prompts en Claude Pro y ChatGPT Plus como laboratorio personal para sistemas no lineales.
 
 ---
 
@@ -17,12 +28,46 @@
 | <img src="media/readme_assets/lorenz_attractor.gif" width="420"> | <img src="media/readme_assets/threebody_figure8.gif" width="420"> |
 | Atractor de Lorenz renderizado como trayectoria 3D. | Coreografía newtoniana de tres cuerpos con masas iguales. |
 
+| Rössler | Chua | Péndulo doble |
+|---|---|---|
+| <img src="media/readme_assets/rossler_attractor.gif" width="280"> | <img src="media/readme_assets/chua_attractor.gif" width="280"> | <img src="media/readme_assets/double_pendulum.gif" width="280"> |
+| Atractor de Rössler. | Circuito de Chua. | Péndulo doble con traza. |
+
 | Poincaré | Sensibilidad | Duffing |
 |---|---|---|
 | <img src="media/readme_assets/henon_poincare.png" width="280"> | <img src="media/readme_assets/lorenz_sensitivity.png" width="280"> | <img src="media/readme_assets/duffing_phase.png" width="280"> |
 | Sección de Poincaré para Hénon-Heiles. | Separación entre dos condiciones iniciales casi iguales. | Fase \((x,v)\) del Duffing forzado. |
 
 ---
+
+## Interfaz
+
+La interfaz está pensada para que el programa se use desde menús, no desde comandos sueltos. En el **menú de análisis** se ejecutan las rutinas principales del sistema activo: series temporales, proyecciones de fase, FTLE/SALI, secciones de Poincaré, animaciones 3D, condiciones iniciales aleatorias inteligentes y exportación de datos.
+
+<p align="center">
+  <img src="media/readme_assets/analysis_menu.png" alt="Menú de análisis de Chaos Calculator" width="900">
+</p>
+
+El **menú de configuración** está separado por módulos para no mostrar todos los parámetros al mismo tiempo. Desde ahí se ajustan tolerancias numéricas, resolución, número de cruces de Poincaré, frames/FPS de animaciones, perfiles de rendimiento, audio, formatos de exportación y los temas globales de Matplotlib usados en las figuras.
+
+<p align="center">
+  <img src="media/readme_assets/config_menu.png" alt="Menú de configuración de Chaos Calculator" width="900">
+</p>
+
+Los cambios quedan guardados en `data/config.json`, así que el programa recuerda tus preferencias entre sesiones.
+
+---
+
+## Interfaz y configuración
+
+El programa tiene dos bancos principales de trabajo. Las capturas de abajo muestran solo los menús, sin el logo ni la pantalla completa, para que se vea directamente qué se puede modificar o ejecutar.
+
+| Menú de análisis | Menú de configuración |
+|---|---|
+| <img src="media/readme_assets/analysis_menu.png" width="600"> | <img src="media/readme_assets/config_menu.png" width="600"> |
+
+En el menú de análisis se integran trayectorias, se hacen proyecciones 2D/3D, se calculan FTLE/SALI, se generan secciones de Poincaré, se renderizan animaciones y se exportan datos.  
+En configuración se ajustan tolerancias, número de puntos, resolución, duración de animaciones, FPS, formatos de exportación, audio y temas globales de Matplotlib. Los cambios quedan guardados en `data/config.json`.
 
 ## Qué puede analizar
 
@@ -125,20 +170,20 @@ data/config.json
 
 Hay perfiles para no destruir el computador por accidente:
 
-| Perfil | Uso sugerido |
-|---|---|
-| SAFE / RÁPIDO | Probar si el sistema funciona. |
-| NORMAL / EQUILIBRADO | Uso diario. |
-| HIGH / PUBLICACIÓN | Figuras más densas y más bonitas. |
-| ULTRA / COSTO ALTO | Para cuando de verdad quieres esperar. |
+| Perfil               | Uso sugerido                           |
+| -------------------- | -------------------------------------- |
+| SAFE / RÁPIDO        | Probar si el sistema funciona.         |
+| NORMAL / EQUILIBRADO | Uso diario.                            |
+| HIGH / PUBLICACIÓN   | Figuras más densas y más bonitas.      |
+| ULTRA / COSTO ALTO   | Para cuando de verdad quieres esperar. |
 
-El programa intenta avisar que el tiempo de computo de los gráficos aumenta según la modificación de los parámetros de los cálculos; sin embargo, en próximas actualizaciones pretendo añadir funcionalidades más inteligentes para generar figuras espectaculares de forma más optimizada.
+El programa intenta avisar que el tiempo de cómputo de los gráficos aumenta según la modificación de los parámetros de los cálculos; sin embargo, en próximas actualizaciones pretendo añadir funcionalidades más inteligentes para generar figuras espectaculares de forma más optimizada.
 
 ---
 
 ## Notebook
 
-Incluye un archivo jupyter notebook para revisar las principales funcionalidades del motor, saltandose la parafernaria 8-bit que es la interfaz de usuario del programa.
+Incluye un archivo Jupyter Notebook para revisar las principales funcionalidades del motor, saltándose la parafernalia 8-bit de la interfaz de usuario del programa.
 
 ```text
 ChaosCalculator_Motor.ipynb
@@ -167,12 +212,11 @@ ChaosCalculator/
     └── .gitkeep                     # aquí se crean config, logs y figuras
 ```
 
-
 ---
 
 ## Música
 
-El programa cuenta con un “chip de audio” inspirado en la Commodore 64, usa `sidplayfp.exe` para reproducir archivos .sid. Agregué estos temas porque quería que el programa tuviera algo del estilo de los cracktros/keygens de los 2000s, pero con un aire todavía más retro. Eventualmente ampliaré la lista de reproducción.
+El programa cuenta con un “chip de audio” inspirado en la Commodore 64: usa `sidplayfp.exe` para reproducir archivos `.sid`. Agregué estos temas porque quería que el programa tuviera algo del estilo de los cracktros/keygens de los 2000s, pero con un aire todavía más retro. Eventualmente ampliaré la lista de reproducción.
 
 Los temas incluidos son:
 
@@ -193,3 +237,18 @@ data/logs/                # logs mínimos
 data/figuras_caos/        # figuras, gifs, csv, etc.
 ```
 
+---
+
+## Social preview
+
+Para configurar la imagen social del repositorio en GitHub, usa:
+
+```text
+media/readme_assets/social_preview.png
+```
+
+---
+
+## Nota honesta
+
+Esto es experimental. Sirve para explorar, visualizar y orientarse. No reemplaza una validación numérica seria ni una revisión matemática completa. Si una figura se ve demasiado bonita, todavía hay que preguntarse si el paso temporal, la tolerancia, el tiempo de integración y la condición inicial tienen sentido.
