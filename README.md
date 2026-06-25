@@ -172,7 +172,7 @@ ChaosCalculator/
 
 ## Música
 
-El programa cuenta con un “chip de audio” inspirado en la Commodore 64, el reproductor `sidplayfp.exe`, para los archivos de audio .sid. Agregué estos temas porque quería que el programa tuviera el estilo de los cracktros/keygens de los 2000s, pero con un aire aun más retro. Eventualmente ampliaré la lista de reproducción.
+El programa cuenta con un “chip de audio” inspirado en la Commodore 64, usa `sidplayfp.exe` para reproducir archivos .sid. Agregué estos temas porque quería que el programa tuviera algo del estilo de los cracktros/keygens de los 2000s, pero con un aire todavía más retro. Eventualmente ampliaré la lista de reproducción.
 
 Los temas incluidos son:
 
@@ -180,8 +180,6 @@ Los temas incluidos son:
 I_Feel_Love.sid
 Ashes_to_Ashes.sid
 ```
-
-Se reproducen con `sidplayfp.exe`. El programa intenta cerrar el reproductor junto con Python. Si Windows mata el proceso de forma abrupta, el siguiente arranque intenta limpiar el audio residual.
 
 ---
 
