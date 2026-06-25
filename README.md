@@ -45,17 +45,6 @@ Los cambios quedan guardados en `data/config.json`, así que el programa recuerd
 
 ---
 
-## Interfaz y configuración
-
-El programa tiene dos bancos principales de trabajo. Las capturas de abajo muestran solo los menús, sin el logo ni la pantalla completa, para que se vea directamente qué se puede modificar o ejecutar.
-
-| Menú de análisis | Menú de configuración |
-|---|---|
-| <img src="media/readme_assets/analysis_menu.png" width="600"> | <img src="media/readme_assets/config_menu.png" width="600"> |
-
-En el menú de análisis se integran trayectorias, se hacen proyecciones 2D/3D, se calculan FTLE/SALI, se generan secciones de Poincaré, se renderizan animaciones y se exportan datos.  
-En configuración se ajustan tolerancias, número de puntos, resolución, duración de animaciones, FPS, formatos de exportación, audio y temas globales de Matplotlib. Los cambios quedan guardados en `data/config.json`.
-
 ## Qué puede analizar
 
 El programa trabaja con dos familias grandes:
