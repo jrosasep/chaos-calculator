@@ -78,8 +78,8 @@ El motor tiene una función de **condiciones iniciales aleatorias inteligentes**
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/jrosasep/chaos-calculator-8bit.git
-cd chaos-calculator-8bit
+git clone https://github.com/jrosasep/chaos-calculator.git
+cd chaos-calculator
 ```
 
 Instala dependencias:
