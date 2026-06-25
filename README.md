@@ -1,11 +1,4 @@
 <p align="center">
-  <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="matplotlib" src="https://img.shields.io/badge/plots-matplotlib-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="scipy" src="https://img.shields.io/badge/solver-scipy%20DOP853-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="status" src="https://img.shields.io/badge/status-experimental-39ff14?style=for-the-badge&labelColor=050505">
-</p>
-
-<p align="center">
   <img src="media/readme_assets/terminal_preview.png" alt="Chaos Calculator terminal preview" width="900">
 </p>
 
@@ -13,9 +6,7 @@
 
 ## Qué es esto
 
-**Chaos Calculator 8-bit** es una calculadora de caos clásico con pinta de terminal CRT vieja. La idea es simple: cargar un sistema dinámico, integrar, mirar su trayectoria, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras decentes sin tener que escribir todo desde cero cada vez.
-
-No es un paquete “cerrado” ni una app formal. Es más bien un laboratorio personal para sistemas no lineales: suficientemente cómodo para jugar, suficientemente serio para generar primeras figuras y suficientemente verde como para parecer que salió de una terminal perdida de 1987.
+**Chaos Calculator** es una calculadora de caos clásico con estética de terminal CRT vieja, sacada de Pinterest; véase https://cl.pinterest.com/pin/689543392987246924/. La idea es cargar un sistema dinámico, integrarlo, visualizar trayectorias, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras sin tener que programarlo todo desde cero. Es un laboratorio personal para sistemas no lineales, generado mediante iteraciones de prompts en Claude Pro y ChatGPT Plus, cuyo objetivo es construir un motor experimental para analizar caos clásico en sistemas descritos por ecuaciones diferenciales y/o Hamiltonianos.
 
 ---
 
@@ -141,7 +132,7 @@ Hay perfiles para no destruir el computador por accidente:
 | HIGH / PUBLICACIÓN | Figuras más densas y más bonitas. |
 | ULTRA / COSTO ALTO | Para cuando de verdad quieres esperar. |
 
-Algunas cosas en caos clásico escalan feo: muchos cruces de Poincaré, espectros de Lyapunov largos, animaciones en GIF y barridos de energía pueden demorarse bastante. El programa intenta avisar antes de hacer locuras, sin embargo para utilizar el motor para calcular figuras mas espectaculares de forma optimizada, en proximas actualizaciones pretendo añadir "funcionalidades mas inteligentes".
+El programa intenta avisar que el tiempo de computo de los gráficos aumenta según la modificación de los parámetros de los cálculos; sin embargo, en próximas actualizaciones pretendo añadir funcionalidades más inteligentes para generar figuras espectaculares de forma más optimizada.
 
 ---
 
@@ -181,7 +172,9 @@ ChaosCalculator/
 
 ## Música
 
-El programa cuenta con un "chip de audio" de la comodore 64, por lo cual reproducide archivos de audio .sid. Agregue estos temas al programa solo pq queria que este tuviera el estilo de los cracken de los 2000s, pero con un aire aun mas retro. Eventualmente ampliare la lista de reproducción. Los temas son los siguientes:
+El programa cuenta con un “chip de audio” inspirado en la Commodore 64, el reproductor `sidplayfp.exe`, para los archivos de audio .sid. Agregué estos temas porque quería que el programa tuviera el estilo de los cracktros/keygens de los 2000s, pero con un aire aun más retro. Eventualmente ampliaré la lista de reproducción.
+
+Los temas incluidos son:
 
 ```text
 I_Feel_Love.sid
