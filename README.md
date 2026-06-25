@@ -1,66 +1,109 @@
-# Chaos Calculator Bullshit
-
 <p align="center">
   <img src="media/chaos_logo_crt.png" alt="Chaos Calculator CRT logo" width="900">
 </p>
 
+<p align="center">
+  <b>Classical chaos analyzer · CRT-80 terminal skin · Hamiltonians + arbitrary ODEs · SID soundtrack</b>
+</p>
 
-Analizador de caos clásico con estética CRT retro/8-bit. Es una calculadora de sistemas dinámicos: le das un Hamiltoniano o un sistema de ecuaciones diferenciales ordinarias, integras, miras trayectorias, secciones, Lyapunov, SALI, animaciones 3D y figuras exportables.
+<p align="center">
+  <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-39ff14?style=for-the-badge&labelColor=050505">
+  <img alt="matplotlib" src="https://img.shields.io/badge/plots-matplotlib-39ff14?style=for-the-badge&labelColor=050505">
+  <img alt="scipy" src="https://img.shields.io/badge/solver-scipy%20DOP853-39ff14?style=for-the-badge&labelColor=050505">
+  <img alt="status" src="https://img.shields.io/badge/status-experimental-39ff14?style=for-the-badge&labelColor=050505">
+</p>
 
-Proyecto experimental con IA para probar ideas de automatización de analisis de caos clasico, con una interfaz ridículamente verde porque mola.
+<p align="center">
+  <img src="media/readme_assets/terminal_preview.png" alt="Chaos Calculator terminal preview" width="900">
+</p>
 
-## Qué hace
+---
 
-- Integra sistemas Hamiltonianos y ODEs generales.
-- Tiene presets clásicos de caos:
-  - Salasnich / SU(2) Yang-Mills-Higgs homogéneo.
-  - Canfora / Georgi-Glashow reducido.
-  - Hénon-Heiles.
-  - Three Body Figure-8.
-  - Lorenz63.
-  - Rössler.
-  - Duffing forzado.
-  - Chua circuit.
-  - Péndulo doble.
-- Genera condiciones iniciales aleatorias válidas de forma inteligente.
-- Calcula FTLE, SALI y espectros de Lyapunov.
-- Dibuja potenciales, trayectorias, proyecciones de fase, secciones de Poincaré y animaciones.
-- Exporta figuras en `png`, `svg` y `pdf`.
-- Guarda memoria de configuración en `data/config.json`.
-- Reproduce música SID con `sidplayfp.exe`.
+## Qué es esto
 
-## Estructura
+**Chaos Calculator 8-bit** es una calculadora de caos clásico con pinta de terminal CRT vieja. La idea es simple: cargar un sistema dinámico, integrar, mirar su trayectoria, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras decentes sin tener que escribir todo desde cero cada vez.
 
-```text
-ChaosCalculator/
-├── ChaosCalculator.py              # launcher principal
-├── ChaosCalculator_Motor.ipynb      # notebook para jugar con el motor sin la interfaz
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── engine/
-│   └── chaos_runtime.py             # motor + interfaz CRT
-├── media/
-│   ├── chaos_logo_crt.png
-│   ├── I_Feel_Love.sid
-│   ├── Ashes_to_Ashes.sid
-│   └── sidplayfp.exe
-└── data/
-    └── .gitkeep                     # aquí se crean config, logs y figuras
-```
+No es un paquete “cerrado” ni una app formal. Es más bien un laboratorio personal para sistemas no lineales: suficientemente cómodo para jugar, suficientemente serio para generar primeras figuras y suficientemente verde como para parecer que salió de una terminal perdida de 1987.
 
-Sí: está compacto a propósito. Más carpetas de las necesarias solo hacen que uno termine peleando con el proyecto en vez de estudiar el sistema dinámico.
+---
+
+## Demo visual
+
+| Lorenz63 | Three-body figure-8 |
+|---|---|
+| <img src="media/readme_assets/lorenz_attractor.gif" width="420"> | <img src="media/readme_assets/threebody_figure8.gif" width="420"> |
+| Atractor de Lorenz renderizado como trayectoria 3D. | Coreografía newtoniana de tres cuerpos con masas iguales. |
+
+| Poincaré | Sensibilidad | Duffing |
+|---|---|---|
+| <img src="media/readme_assets/henon_poincare.png" width="280"> | <img src="media/readme_assets/lorenz_sensitivity.png" width="280"> | <img src="media/readme_assets/duffing_phase.png" width="280"> |
+| Sección de Poincaré para Hénon-Heiles. | Separación entre dos condiciones iniciales casi iguales. | Fase \((x,v)\) del Duffing forzado. |
+
+---
+
+## Qué puede analizar
+
+El programa trabaja con dos familias grandes:
+
+1. **Hamiltonianos clásicos**  
+   Escribes \(H(q,p)\) y el motor construye automáticamente las ecuaciones de Hamilton.
+
+2. **ODEs generales**  
+   Escribes un sistema autónomo de la forma
+
+   ```text
+   z' = f(z)
+   ```
+
+   y el programa lo integra como sistema dinámico general.
+
+Actualmente incluye presets para:
+
+| Preset | Tipo | Comentario |
+|---|---:|---|
+| Salasnich | Hamiltoniano | Reducción homogénea SU(2) Yang-Mills-Higgs. |
+| Canfora | Hamiltoniano | Modelo reducido tipo Georgi-Glashow. |
+| Hénon-Heiles | Hamiltoniano | Benchmark clásico para caos Hamiltoniano. |
+| Three-body figure-8 | ODE | Tres cuerpos newtonianos planares con coreografía figura-8. |
+| Lorenz63 | ODE | El atractor clásico de Lorenz. |
+| Rössler | ODE | Otro atractor clásico de baja dimensión. |
+| Duffing forzado | ODE | Oscilador no lineal forzado, autonomizado con fase. |
+| Chua circuit | ODE | Circuito no lineal con dinámica caótica. |
+| Péndulo doble | ODE | El clásico sistema mecánico sensible a condiciones iniciales. |
+
+---
+
+## Indicadores y salidas
+
+- Trayectorias 2D/3D.
+- Proyecciones de fase.
+- Secciones de Poincaré.
+- FTLE.
+- SALI.
+- Espectro de Lyapunov.
+- Barridos de energía para Hamiltonianos.
+- Animaciones GIF.
+- Exportación en `png`, `svg` y `pdf`.
+- Memoria persistente en `data/config.json`.
+
+El motor tiene una función de **condiciones iniciales aleatorias inteligentes**: no tira números al azar sin más, sino que intenta respetar cotas, evitar singularidades, evitar colisiones en N-cuerpos y descartar estados que explotan inmediatamente.
+
+---
 
 ## Instalación
 
+Clona el repositorio:
+
 ```bash
-pip install -r requirements.txt
-python ChaosCalculator.py
+git clone https://github.com/jrosasep/chaos-calculator-8bit.git
+cd chaos-calculator-8bit
 ```
 
-En Windows, si usas terminal normal o Windows Terminal, debería funcionar bien. Si la música SID no suena, revisa que `media/sidplayfp.exe` esté presente.
+Instala dependencias:
 
-## Uso rápido
+```bash
+pip install -r requirements.txt
+```
 
 Ejecuta:
 
@@ -68,7 +111,15 @@ Ejecuta:
 python ChaosCalculator.py
 ```
 
-Controles principales:
+En Windows conviene usar Windows Terminal. Si el audio SID no suena, revisa que exista:
+
+```text
+media/sidplayfp.exe
+```
+
+---
+
+## Controles
 
 ```text
 ↑/↓       mover selección
@@ -79,62 +130,82 @@ N         siguiente pista SID
 B         pista SID anterior
 ```
 
-La configuración se guarda automáticamente. Si cambias tema de Matplotlib, resolución, formatos de exportación, pista de música o perfiles de rendimiento, el programa lo recuerda.
+El programa recuerda tus cambios. Si ajustas resolución, estilo de Matplotlib, pista de audio, formatos de exportación o perfiles de rendimiento, queda guardado en:
+
+```text
+data/config.json
+```
+
+---
 
 ## Perfiles de rendimiento
 
-Hay perfiles para no hacer locuras con el notebook abierto, música sonando y una animación gigante guardándose en GIF:
+Hay perfiles para no destruir el computador por accidente:
 
-- `SAFE / RAPIDO`: para probar sin esperar mucho.
-- `NORMAL / EQUILIBRADO`: uso diario.
-- `HIGH / PUBLICACION`: mejores figuras, más costo.
-- `ULTRA / COSTO ALTO`: úsalo con criterio; puede demorarse bastante.
+| Perfil | Uso sugerido |
+|---|---|
+| SAFE / RÁPIDO | Probar si el sistema funciona. |
+| NORMAL / EQUILIBRADO | Uso diario. |
+| HIGH / PUBLICACIÓN | Figuras más densas y más bonitas. |
+| ULTRA / COSTO ALTO | Para cuando de verdad quieres esperar. |
 
-El programa avisa cuando una opción puede aumentar demasiado el costo computacional. No es decoración: algunos análisis de caos sí pueden crecer fuerte en tiempo de cómputo.
+Algunas cosas en caos clásico escalan feo: muchos cruces de Poincaré, espectros de Lyapunov largos, animaciones en GIF y barridos de energía pueden demorarse bastante. El programa intenta avisar antes de hacer locuras.
 
-## Condiciones iniciales aleatorias inteligentes
-
-No se trata de tirar números al azar y rezar. El motor intenta construir condiciones iniciales que tengan sentido para cada sistema:
-
-- En Hamiltonianos, busca estados compatibles con regiones de energía razonables.
-- En ODEs con cotas, usa cajas de condiciones iniciales y perturbaciones controladas.
-- En N-cuerpos, evita cuerpos demasiado cerca, corrige centro de masa y momento total.
-- Siempre descarta estados con `NaN`, `Inf`, derivadas absurdas o integraciones que explotan de inmediato.
-
-Igual, esto no es magia. Si defines un sistema físicamente mal puesto, el programa no puede salvarlo todo.
+---
 
 ## Notebook
 
-El archivo:
+También viene un notebook:
 
 ```text
 ChaosCalculator_Motor.ipynb
 ```
 
-sirve para usar el motor sin la interfaz CRT. Ahí puedes:
+Ese archivo sirve para usar el motor sin la interfaz CRT. Es la forma más cómoda de modificar parámetros, revisar el código con calma, probar condiciones iniciales y graficar sin navegar menús.
 
-- elegir un preset,
-- cambiar parámetros,
-- generar una condición inicial aleatoria,
-- integrar,
-- graficar,
-- calcular Lyapunov/SALI,
-- exportar datos.
+---
 
-Es la versión práctica para trabajar con Claude, depurar matemáticamente o hacer pruebas sin navegar menús.
+## Estructura
+
+```text
+ChaosCalculator/
+├── ChaosCalculator.py              # launcher principal
+├── ChaosCalculator_Motor.ipynb      # notebook para usar el motor directamente
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── engine/
+│   └── chaos_runtime.py             # motor + interfaz CRT
+├── media/
+│   ├── chaos_logo_crt.png
+│   ├── readme_assets/
+│   ├── I_Feel_Love.sid
+│   ├── Ashes_to_Ashes.sid
+│   └── sidplayfp.exe
+└── data/
+    └── .gitkeep                     # aquí se crean config, logs y figuras
+```
+
+Sí, está compacto a propósito. Más carpetas de las necesarias solo hacen que uno termine peleando con el proyecto en vez de mirar la física.
+
+---
 
 ## Música
 
 Solo dejé dos temas SID:
 
-- `I_Feel_Love.sid`
-- `Ashes_to_Ashes.sid`
+```text
+I_Feel_Love.sid
+Ashes_to_Ashes.sid
+```
 
-La música usa `sidplayfp.exe`. Si cierras el programa, el proceso de audio debería cerrarse también. Si algo queda colgado por cierre abrupto, el siguiente arranque intenta limpiar el proceso residual.
+Se reproducen con `sidplayfp.exe`. El programa intenta cerrar el reproductor junto con Python. Si Windows mata el proceso de forma abrupta, el siguiente arranque intenta limpiar el audio residual.
+
+---
 
 ## Archivos generados
 
-El programa genera cosas dentro de `data/`:
+Todo lo generado cae dentro de `data/`:
 
 ```text
 data/config.json          # memoria del programa
@@ -142,8 +213,20 @@ data/logs/                # logs mínimos
 data/figuras_caos/        # figuras, gifs, csv, etc.
 ```
 
-Esos archivos están en `.gitignore`, porque no tiene sentido subir cada prueba al repositorio.
+Eso está ignorado por Git porque son salidas de trabajo, no código fuente.
 
-## Estado
+---
 
-Proyecto experimental, pero usable. La idea es ir ampliándolo como herramienta para analizar caos clásico en reducciones de modelos físicos, sistemas Hamiltonianos y ODEs no lineales arbitrarias.
+## Nota honesta
+
+Esto es experimental. Sirve para explorar, visualizar y orientarse. No reemplaza una validación numérica seria ni una revisión matemática completa. Si una figura se ve demasiado bonita, todavía hay que preguntarse si el paso temporal, la tolerancia, el tiempo de integración y la condición inicial tienen sentido.
+
+---
+
+## Nombre sugerido
+
+```text
+chaos-calculator-8bit
+```
+
+Corto, buscable y dice exactamente qué es: una calculadora de caos con estética 8-bit.
