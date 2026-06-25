@@ -1,12 +1,4 @@
 <p align="center">
-  <img src="media/chaos_logo_crt.png" alt="Chaos Calculator CRT logo" width="900">
-</p>
-
-<p align="center">
-  <b>Classical chaos analyzer · CRT-80 terminal skin · Hamiltonians + arbitrary ODEs · SID soundtrack</b>
-</p>
-
-<p align="center">
   <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-39ff14?style=for-the-badge&labelColor=050505">
   <img alt="matplotlib" src="https://img.shields.io/badge/plots-matplotlib-39ff14?style=for-the-badge&labelColor=050505">
   <img alt="scipy" src="https://img.shields.io/badge/solver-scipy%20DOP853-39ff14?style=for-the-badge&labelColor=050505">
