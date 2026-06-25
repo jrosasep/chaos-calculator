@@ -1,7 +1,9 @@
 <p align="center">
   <img src="media/readme_assets/terminal_preview.png">
 </p>
-## Qué es esto
+---
+
+ ##Qué es esto
 
 **Chaos Calculator** es una calculadora experimental de caos clásico con estética de terminal CRT vieja, sacada de Pinterest; véase https://cl.pinterest.com/pin/689543392987246924/. Sirve para cargar sistemas dinámicos, integrarlos, visualizar trayectorias, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras sin escribir todo desde cero. Fue generado mediante iteraciones de prompts en Claude Pro y ChatGPT Plus como laboratorio personal para sistemas no lineales.
 
