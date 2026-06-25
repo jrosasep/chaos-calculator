@@ -149,19 +149,17 @@ Hay perfiles para no destruir el computador por accidente:
 | HIGH / PUBLICACIÓN | Figuras más densas y más bonitas. |
 | ULTRA / COSTO ALTO | Para cuando de verdad quieres esperar. |
 
-Algunas cosas en caos clásico escalan feo: muchos cruces de Poincaré, espectros de Lyapunov largos, animaciones en GIF y barridos de energía pueden demorarse bastante. El programa intenta avisar antes de hacer locuras.
+Algunas cosas en caos clásico escalan feo: muchos cruces de Poincaré, espectros de Lyapunov largos, animaciones en GIF y barridos de energía pueden demorarse bastante. El programa intenta avisar antes de hacer locuras, sin embargo para utilizar el motor para calcular figuras mas espectaculares de forma optimizada, en proximas actualizaciones pretendo añadir "funcionalidades mas inteligentes".
 
 ---
 
 ## Notebook
 
-También viene un notebook:
+Incluye un archivo jupyter notebook para revisar las principales funcionalidades del motor, saltandose la parafernaria 8-bit que es la interfaz de usuario del programa.
 
 ```text
 ChaosCalculator_Motor.ipynb
 ```
-
-Ese archivo sirve para usar el motor sin la interfaz CRT. Es la forma más cómoda de modificar parámetros, revisar el código con calma, probar condiciones iniciales y graficar sin navegar menús.
 
 ---
 
@@ -186,13 +184,12 @@ ChaosCalculator/
     └── .gitkeep                     # aquí se crean config, logs y figuras
 ```
 
-Sí, está compacto a propósito. Más carpetas de las necesarias solo hacen que uno termine peleando con el proyecto en vez de mirar la física.
 
 ---
 
 ## Música
 
-Solo dejé dos temas SID:
+El programa cuenta con un "chip de audio" de la comodore 64, por lo cual reproducide archivos de audio .sid. Agregue estos temas al programa solo pq queria que este tuviera el estilo de los cracken de los 2000s, pero con un aire aun mas retro. Eventualmente ampliare la lista de reproducción. Los temas son los siguientes:
 
 ```text
 I_Feel_Love.sid
@@ -213,20 +210,3 @@ data/logs/                # logs mínimos
 data/figuras_caos/        # figuras, gifs, csv, etc.
 ```
 
-Eso está ignorado por Git porque son salidas de trabajo, no código fuente.
-
----
-
-## Nota honesta
-
-Esto es experimental. Sirve para explorar, visualizar y orientarse. No reemplaza una validación numérica seria ni una revisión matemática completa. Si una figura se ve demasiado bonita, todavía hay que preguntarse si el paso temporal, la tolerancia, el tiempo de integración y la condición inicial tienen sentido.
-
----
-
-## Nombre sugerido
-
-```text
-chaos-calculator-8bit
-```
-
-Corto, buscable y dice exactamente qué es: una calculadora de caos con estética 8-bit.
