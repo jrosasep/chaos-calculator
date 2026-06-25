@@ -1,19 +1,4 @@
 <p align="center">
-  <img src="media/chaos_logo_crt.png" alt="Chaos Calculator CRT logo" width="900">
-</p>
-
-<p align="center">
-  <b>Classical chaos analyzer · CRT-80 terminal skin · Hamiltonians + arbitrary ODEs · SID soundtrack</b>
-</p>
-
-<p align="center">
-  <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="matplotlib" src="https://img.shields.io/badge/plots-matplotlib-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="scipy" src="https://img.shields.io/badge/solver-scipy%20DOP853-39ff14?style=for-the-badge&labelColor=050505">
-  <img alt="status" src="https://img.shields.io/badge/status-experimental-39ff14?style=for-the-badge&labelColor=050505">
-</p>
-
-<p align="center">
   <img src="media/readme_assets/terminal_preview.png" alt="Chaos Calculator terminal preview" width="900">
 </p>
 
@@ -21,9 +6,7 @@
 
 ## Qué es esto
 
-**Chaos Calculator 8-bit** es una calculadora de caos clásico con pinta de terminal CRT vieja. La idea es simple: cargar un sistema dinámico, integrar, mirar su trayectoria, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras decentes sin tener que escribir todo desde cero cada vez.
-
-No es un paquete “cerrado” ni una app formal. Es más bien un laboratorio personal para sistemas no lineales: suficientemente cómodo para jugar, suficientemente serio para generar primeras figuras y suficientemente verde como para parecer que salió de una terminal perdida de 1987.
+**Chaos Calculator** es una calculadora de caos clásico con estética de terminal CRT vieja, sacada de Pinterest; véase https://cl.pinterest.com/pin/689543392987246924/. La idea es cargar un sistema dinámico, integrarlo, visualizar trayectorias, comparar sensibilidad a condiciones iniciales, calcular indicadores de caos y exportar figuras sin tener que programarlo todo desde cero. Es un laboratorio personal para sistemas no lineales, generado mediante iteraciones de prompts en Claude Pro y ChatGPT Plus, cuyo objetivo es construir un motor experimental para analizar caos clásico en sistemas descritos por ecuaciones diferenciales y/o Hamiltonianos.
 
 ---
 
@@ -95,8 +78,8 @@ El motor tiene una función de **condiciones iniciales aleatorias inteligentes**
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/jrosasep/chaos-calculator-8bit.git
-cd chaos-calculator-8bit
+git clone https://github.com/jrosasep/chaos-calculator.git
+cd chaos-calculator
 ```
 
 Instala dependencias:
@@ -149,19 +132,17 @@ Hay perfiles para no destruir el computador por accidente:
 | HIGH / PUBLICACIÓN | Figuras más densas y más bonitas. |
 | ULTRA / COSTO ALTO | Para cuando de verdad quieres esperar. |
 
-Algunas cosas en caos clásico escalan feo: muchos cruces de Poincaré, espectros de Lyapunov largos, animaciones en GIF y barridos de energía pueden demorarse bastante. El programa intenta avisar antes de hacer locuras.
+El programa intenta avisar que el tiempo de computo de los gráficos aumenta según la modificación de los parámetros de los cálculos; sin embargo, en próximas actualizaciones pretendo añadir funcionalidades más inteligentes para generar figuras espectaculares de forma más optimizada.
 
 ---
 
 ## Notebook
 
-También viene un notebook:
+Incluye un archivo jupyter notebook para revisar las principales funcionalidades del motor, saltandose la parafernaria 8-bit que es la interfaz de usuario del programa.
 
 ```text
 ChaosCalculator_Motor.ipynb
 ```
-
-Ese archivo sirve para usar el motor sin la interfaz CRT. Es la forma más cómoda de modificar parámetros, revisar el código con calma, probar condiciones iniciales y graficar sin navegar menús.
 
 ---
 
@@ -186,20 +167,19 @@ ChaosCalculator/
     └── .gitkeep                     # aquí se crean config, logs y figuras
 ```
 
-Sí, está compacto a propósito. Más carpetas de las necesarias solo hacen que uno termine peleando con el proyecto en vez de mirar la física.
 
 ---
 
 ## Música
 
-Solo dejé dos temas SID:
+El programa cuenta con un “chip de audio” inspirado en la Commodore 64, usa `sidplayfp.exe` para reproducir archivos .sid. Agregué estos temas porque quería que el programa tuviera algo del estilo de los cracktros/keygens de los 2000s, pero con un aire todavía más retro. Eventualmente ampliaré la lista de reproducción.
+
+Los temas incluidos son:
 
 ```text
 I_Feel_Love.sid
 Ashes_to_Ashes.sid
 ```
-
-Se reproducen con `sidplayfp.exe`. El programa intenta cerrar el reproductor junto con Python. Si Windows mata el proceso de forma abrupta, el siguiente arranque intenta limpiar el audio residual.
 
 ---
 
@@ -213,20 +193,3 @@ data/logs/                # logs mínimos
 data/figuras_caos/        # figuras, gifs, csv, etc.
 ```
 
-Eso está ignorado por Git porque son salidas de trabajo, no código fuente.
-
----
-
-## Nota honesta
-
-Esto es experimental. Sirve para explorar, visualizar y orientarse. No reemplaza una validación numérica seria ni una revisión matemática completa. Si una figura se ve demasiado bonita, todavía hay que preguntarse si el paso temporal, la tolerancia, el tiempo de integración y la condición inicial tienen sentido.
-
----
-
-## Nombre sugerido
-
-```text
-chaos-calculator-8bit
-```
-
-Corto, buscable y dice exactamente qué es: una calculadora de caos con estética 8-bit.
